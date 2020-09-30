@@ -1,0 +1,23 @@
+{
+  "name": "2c-php74-fix",
+  "version": "1.0.0",
+  "description": "Fix Laravel 5.x project with Sluggable for PHP 7.4",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krehak/2c-php74-fix.git"
+  },
+  "keywords": [],
+  "author": "Patrik Krehák",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krehak/2c-php74-fix/issues"
+  },
+  "homepage": "https://github.com/krehak/2c-php74-fix",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
