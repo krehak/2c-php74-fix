@@ -19,5 +19,9 @@
   "homepage": "https://github.com/krehak/2c-php74-fix",
   "dependencies": {
     "shelljs": "^0.8.4"
-  }
+  },
+  "bin": {
+    "2c-php74-fix": "./index.js"
+  },
+  "preferGlobal": true
 }
