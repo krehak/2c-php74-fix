@@ -1,6 +1,6 @@
 {
   "name": "2c-php74-fix",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Fix Laravel 5.x project with Sluggable for PHP 7.4",
   "main": "index.js",
   "files": [

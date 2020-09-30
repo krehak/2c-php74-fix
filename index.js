@@ -13,7 +13,20 @@ if(!argumentPath[0]) {
 
 const composerPath = path.resolve(argumentPath[0]);
 const projectPath = path.dirname(composerPath);
-const data = JSON.parse(fs.readFileSync(composerPath, 'utf8'));
+
+if(!fs.existsSync(composerPath)) {
+    console.error('Cesta k suboru composer.json je neplatna');
+    console.log('\x1b[0m', '');
+    return;
+}
+
+try {
+    const data = JSON.parse(fs.readFileSync(composerPath, 'utf8'));
+} catch($e) {
+    console.error('Subor composer.json je poskodeny');
+    console.log('\x1b[0m', '');
+    return;
+}
 
 var newData = data;
 
