@@ -75,8 +75,6 @@ newData['autoload'] = composerAutoload;
 fs.writeFileSync(composerPath, JSON.stringify(newData, null, 4));
 console.log('\x1b[32m', 'composer.json bol aktualizovany, instalujem package...');
 shell.cd(projectPath);
-console.log('\x1b[0m', '');
-return;
 
 /*
 * Instalacia packagu
