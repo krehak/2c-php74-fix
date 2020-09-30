@@ -20,15 +20,15 @@ if(!fs.existsSync(composerPath)) {
     return;
 }
 
+var data;
+
 try {
-    const data = JSON.parse(fs.readFileSync(composerPath, 'utf8'));
+    data = JSON.parse(fs.readFileSync(composerPath, 'utf8'));
 } catch($e) {
     console.error('Subor composer.json je poskodeny');
     console.log('\x1b[0m', '');
     return;
 }
-
-var newData = data;
 
 /*
 * Aktualizovanie repositories
@@ -55,7 +55,7 @@ if(!alreadyExists) {
             }
         }
     });
-    newData['repositories'] = composerRepositories;
+    data['repositories'] = composerRepositories;
 }
 
 /*
@@ -67,12 +67,12 @@ var composerAutoloadExclude = !!composerAutoload['exclude-from-classmap'] ? comp
 
 composerAutoloadPsr4["Cviebrock\\EloquentSluggable\\"] = 'vendor/krehak/eloquent-sluggable/';
 if(composerAutoloadExclude.indexOf('vendor/cviebrock/eloquent-sluggable/*') === -1) composerAutoloadExclude.push('vendor/cviebrock/eloquent-sluggable/*');
-newData['autoload'] = composerAutoload;
+data['autoload'] = composerAutoload;
 
 /*
 * Ulozenie do composer.json
 * */
-fs.writeFileSync(composerPath, JSON.stringify(newData, null, 4));
+fs.writeFileSync(composerPath, JSON.stringify(data, null, 4));
 console.log('\x1b[32m', 'composer.json bol aktualizovany, instalujem package...');
 shell.cd(projectPath);
 
